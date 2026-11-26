@@ -595,7 +595,7 @@ function App() {
     <div className="world-backdrop" />
     <div className="world-vignette" />
     <header className="top-hud">
-      <button className="brand-mark" onClick={() => setScreen('welcome')} aria-label="ChocoWarm home"><span className="brand-heart">H</span><span><strong>ChocoWarm</strong><small>Your Hot Chocolate</small></span></button>
+      <button className="brand-mark" onClick={() => setScreen('welcome')} aria-label="ChocoWarm home"><span className="brand-heart">H</span><span><strong>MÈLTI</strong><small>Your Hot Chocolate</small></span></button>
       {screen === 'game' && <div className="journey-meter"><div className="meter-title"><Sparkles size={17}/><span className="destination-name">{DESTINATIONS[chapterIndex].name}</span><b>{progress.completed}/{progress.total}</b></div><div className="meter-segments" role="progressbar" aria-label="Survey progress" aria-valuemin={0} aria-valuemax={progress.total} aria-valuenow={progress.completed}>{Array.from({ length: progress.total }, (_, index) => <span key={index} className={index < progress.completed ? 'segment-done' : index === progress.completed ? 'segment-current' : ''} />)}</div><ChapterTrail currentIndex={chapterIndex} /></div>}
       <div className="top-actions">{screen === 'game' && <><div className="game-clock"><Timer size={16}/><span>{formattedTime}</span></div><button className="timer-toggle" onClick={() => { if (timerPaused) sfx.resume(); else sfx.pause(); setTimerPaused(!timerPaused); }} aria-label={timerPaused ? 'Resume game timer' : 'Pause game timer'}>{timerPaused ? <Play size={17}/> : <Pause size={17}/>}<span>{timerPaused ? 'Resume' : 'Pause'}</span></button><div className="spark-counter"><Sparkles size={16}/><span>{answers.length} stars</span></div></>}<button className="round-control" onClick={() => setSoundOn(v => !v)} aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}>{soundOn ? <Volume2/> : <VolumeX/>}</button></div>
     </header>
@@ -653,7 +653,7 @@ function App() {
 
     {screen === 'complete' && <section className={`complete-scene ${completionStatus === 'ineligible' ? 'complete-ineligible' : ''}`}>
       <div className="cafe-completion-card">
-        <div className="cafe-completion-sign">COCOA HOUSE <span>·</span> YOUR COZY CORNER</div>
+        <div className="cafe-completion-sign">MÈLTI<span>·</span> YOUR COZY CORNER</div>
         <div className="cafe-cup-art" aria-hidden="true">
           <span className="cafe-cup-steam cafe-cup-steam-one" />
           <span className="cafe-cup-steam cafe-cup-steam-two" />
